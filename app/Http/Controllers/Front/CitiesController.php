@@ -29,6 +29,7 @@ class CitiesController extends Controller
     {
         $city = City::where('slug', $slug)->first();
         $cityTags = $city->tags()->paginate(PAGINATION_COUNT);
+        // return $cityTags;
         // Group query to show some items
         $sections = selectActiveSctions();
         $articles = select5ActiveArticles();
@@ -39,12 +40,14 @@ class CitiesController extends Controller
 
     }
     //show one city with his tag
-    public function show_city_tag($slugTag,$slugcity){
-        $city = City::where('slug',$slugcity)->first();
+    public function show_city_tag($slug,$city){
+
+        // return $city;
+
+        $city = City::where('slug', $city)->first();
 
         // Replace hyphen (-) with space( )
-        $arr = explode("-",$slugTag);
-        $slugTag = implode(" ",$arr);
+        $slugTag_with_city = str_replace("-", " ", $slug);
 
         // Group query to show some items
         $sections = selectActiveSctions();
@@ -52,11 +55,11 @@ class CitiesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-
+        
         if (!$city) {
         return redirect()->route('404.index');
         }
-        return view('front.pages.cities.city-with-tag', compact('city','slugTag','sections','articles','tags','first_articles','last_articles'));
+        return view('front.pages.cities.city-with-tag', compact('city','slugTag_with_city','sections','articles','tags','first_articles','last_articles'));
 
 
     }

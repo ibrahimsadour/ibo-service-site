@@ -57,7 +57,7 @@ Route::group( [
     ###########################################
     Route::get('cities',[CitiesController::class ,'show_all_cities']) -> name('cities.index');
     Route::get('cities/{slug}',[CitiesController::class ,'show_one_city']) -> name('city.index');
-    Route::get('cities/{slugcity}/{slugTag}',[CitiesController::class ,'show_city_tag']) -> name('city.tag.index');
+    Route::get('cities/{slugTag}/{city?}',[CitiesController::class ,'show_city_tag'])-> name('city.tag.index');
     ###########################################
 
     ###########################################
