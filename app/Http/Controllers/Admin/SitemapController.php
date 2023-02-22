@@ -53,7 +53,7 @@ class SitemapController extends Controller
         $sitemap = Sitemap::create();
         foreach ($cities as $city) {
             foreach($city->tags as $tag){
-                $sitemap ->add(Url::create('cities/'.$tag->slug.'/'.$city->slug));
+                $sitemap ->add(Url::create('cities/'.$tag->slug.'-'.$city->slug.'/'.$city->slug));
             }
 
         }
