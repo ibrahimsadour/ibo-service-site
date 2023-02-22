@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @if(isset($section))
-    @section('title',$section->name)
+    @section('title',$section->name.' '.'نقل اغراض البيت وتحريك أثاث ايكيا نقل اثاث')
     @section('seo_keyword',$section ->seo_keyword)
     @section('seo_description',$section ->seo_description)
     @section('seo_image',$section->photo)
@@ -12,7 +12,7 @@
     <div class="section-item sidebar-left has-sidebar">
         <nav id="breadcrumb">
             <a href="{{ URL::route('site.index') }}" title="الرئيسية">الرئيسية</a><em class="delimiter">/</em>
-            <a href="{{ URL::route('site.index')}}" title="جميع المدن">جميع الاقسام</a><em class="delimiter">/</em>
+            <a href="{{ URL::route('site.index')}}" title="جميع الاقسام">جميع الاقسام</a><em class="delimiter">/</em>
             <span title="{{$section -> name}}" >{{$section -> name}}</span><em class="delimiter"></em>
         </nav>
         <div class="container-normal">
@@ -27,7 +27,7 @@
                             <div class="tagcloud">
                                 @isset($sectionTags)
                                     @foreach($sectionTags as $tag)
-                                    <a class="section-block" style="" class="post-cat tie-cat-8" href="{{url('tags/'.$tag -> slug) }}" title="{{$tag -> name}} في {{$tag -> name}}" >{{ Str::limit($tag -> name, 40)}} </a>
+                                    <a class="section-block" style="" class="post-cat tie-cat-8" href="{{url('tags/'.$tag -> slug) }}" title="{{$tag -> name}} في {{get_default_country()}} " >{{ Str::limit($tag -> name, 40)}} في {{get_default_country()}}  </a>
                                     @endforeach
                                     <div>{{$sectionTags->links()}}</div>
 

@@ -18,13 +18,15 @@ class SitemapController extends Controller
 
     public function sitemap_index(){
 
-        return Sitemap::create(env('APP_URL'))  
+        return Sitemap::create(env('APP_URL')) 
+            ->add(Url::create('/')) 
             ->add(Url::create('/about'))
             ->add(Url::create('/privacy-policy'))
             ->add(Url::create('/terms-condition'))
             ->add(Url::create('/contact-us'))
             ->add(Url::create('/tags'))
             ->add(Url::create('/cities'))
+            ->add(Url::create('/services'))
             ->add(Url::create('/articles'))
             ->writeToFile('sitemap_index.xml');
     }
