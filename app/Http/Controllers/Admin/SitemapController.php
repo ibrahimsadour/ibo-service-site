@@ -57,7 +57,7 @@ class SitemapController extends Controller
             }
 
         }
-        return  $sitemap->writeToFile(public_path('sitemap_city_tags.xml'));
+        return  $sitemap->writeToFile(public_path('sitemap-city-tags.xml'));
     }
     public function sitemap_tags(){
         $tags = Tag::Active()->get();
