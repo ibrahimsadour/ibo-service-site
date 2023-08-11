@@ -8,6 +8,7 @@
 use App\Models\Article;
 use App\Models\Section;
 use App\Models\Tag;
+use App\Models\Footer;
 use Illuminate\Support\Facades\Config;
 
 
@@ -176,5 +177,8 @@ function selectLast_Articles(){
 }
 function select10ActiveTags(){
     return Tag::Active()->inRandomOrder()->limit(10)->get();
+}
+function FooterPageLinks(){
+    return Footer::Active()->inRandomOrder()->limit(5)->get();
 }
 define('PAGINATION_COUNT',15); // PAGINATION_COUNT : een vast variabel  om alleen 10 items te laat zien om de pagina

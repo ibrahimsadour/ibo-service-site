@@ -21,7 +21,9 @@ class ServicesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.services.services_group', compact('services','sections','articles','tags','first_articles','last_articles'));
+        $footer_page_links = FooterPageLinks();        
+
+        return view('front.pages.services.services_group', compact('services','sections','articles','tags','first_articles','last_articles','footer_page_links'));
     }
 
     //show one service
@@ -38,7 +40,9 @@ class ServicesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.services.service', compact('service','sections','articles','tags','first_articles','last_articles'));
+        $footer_page_links = FooterPageLinks();        
+
+        return view('front.pages.services.service', compact('service','sections','articles','tags','first_articles','last_articles','footer_page_links'));
 
     }
 }

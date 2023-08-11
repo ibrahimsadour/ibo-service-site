@@ -155,6 +155,19 @@
                 </ul>
             </li>
 
+            {{--   Footer   --}}
+           <li class="{{ Request::is('admin/footer') ? 'nav-item active' : '' }}">
+                <a href=""><i class="la la-tags"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">Footer</span>
+                    <span class="badge badge badge-warning badge-pill float-right mr-2">اضغط هنا للتعديل</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="{{ Request::is('admin/footer') ? 'active' : '' }}"><a class="menu-item" href="{{route('admin.footer')}}"
+                                                                                    data-i18n="nav.dash.ecommerce"> تعديل قائمة الصفحات</a>
+                    </li>
+                </ul>
+            </li>
+
             <li class=" nav-item"><a href="/" target="_blank"><i class="la la-support"></i><span
                         class="menu-title" data-i18n="nav.support_raise_support.main">الموفع</span></a>
             </li>

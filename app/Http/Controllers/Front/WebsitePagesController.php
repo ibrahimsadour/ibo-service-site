@@ -24,9 +24,10 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-                
+        $footer_page_links = FooterPageLinks();        
+
         $home_page = HomePage::first();
-        return view('front.pages.home', compact(['sections','articles','tags','first_articles','last_articles','home_page']));
+        return view('front.pages.home', compact(['sections','articles','tags','first_articles','last_articles','home_page','footer_page_links']));
     }
 
     public function about_page (){
@@ -38,9 +39,10 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $footer_page_links = FooterPageLinks();        
 
 
-        return view('front.pages.about.index', compact('about','sections','articles','tags','first_articles','last_articles'));
+        return view('front.pages.about.index', compact('about','sections','articles','tags','first_articles','last_articles','footer_page_links'));
     }
 
     public function privacy_policy_page (){
@@ -52,8 +54,9 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $footer_page_links = FooterPageLinks();        
 
-        return view('front.pages.privacy-policy.index', compact('privacy_policy_page','sections','articles','tags','first_articles','last_articles'));
+        return view('front.pages.privacy-policy.index', compact('privacy_policy_page','sections','articles','tags','first_articles','last_articles','footer_page_links'));
     }
 
     public function terms_condition_page (){
@@ -65,8 +68,9 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
+        $footer_page_links = FooterPageLinks();        
 
-        return view('front.pages.terms-condition.index', compact('terms_condition_page','sections','articles','tags','first_articles','last_articles'));
+        return view('front.pages.terms-condition.index', compact('terms_condition_page','sections','articles','tags','first_articles','last_articles','footer_page_links'));
     }
     public function contact_us_page (){
         // Group query to show some items
@@ -75,7 +79,9 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.contact-us.index', compact('sections','articles','tags','first_articles','last_articles'));
+        $footer_page_links = FooterPageLinks();        
+
+        return view('front.pages.contact-us.index', compact('sections','articles','tags','first_articles','last_articles','footer_page_links'));
     }
 
 
@@ -86,7 +92,9 @@ class WebsitePagesController extends Controller
         $first_articles = selectFirst_Articles();
         $last_articles = selectLast_Articles();
         $tags = select10ActiveTags();
-        return view('front.pages.404.index', compact('sections','articles','tags','first_articles','last_articles'));
+        $footer_page_links = FooterPageLinks();        
+
+        return view('front.pages.404.index', compact('sections','articles','tags','first_articles','last_articles','footer_page_links'));
     }
     public function sitemap (){
         return view('front.pages.sitemap.index');
