@@ -1,6 +1,6 @@
 <div class="call-now-button">
     <div>
-        <a href="@if(get_default_phone_number() != Null){{'tel:'.get_default_phone_number()}}@else{{'phone number empty'}} @endif" title="اتصل الان">
+        <a href="@if(get_default_phone_number() != Null){{'tel:00'.get_default_phone_number()}}@else{{'phone number empty'}} @endif" title="اتصل الان">
             <p class="call-text">اتصل الان</p>
             <div class="quick-alo-ph-img-circle shake"></div>
         </a>
