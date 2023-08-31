@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @if(isset($section))
-    @section('title',$section->name.' '.'نقل اغراض البيت وتحريك أثاث ايكيا نقل اثاث')
+    @section('title',$section->name)
     @section('seo_keyword',$section ->seo_keyword)
     @section('seo_description',$section ->seo_description)
     @section('seo_image',$section->photo)
