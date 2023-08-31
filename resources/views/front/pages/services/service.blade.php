@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @if(isset($service))
-    @section('title',$service ->name.'  '.' {{get_default_country()}} | نقوم بخدمتكم على مدار 24 ساعة')
+    @section('title',$service ->name {{get_default_country()}} '| نقوم بخدمتكم على مدار 24 ساعة')
     @section('seo_keyword',$service ->seo_keyword)
     @section('seo_description',$service ->seo_description)
     @section('seo_url', URL::route('tag.index',$service -> slug) )
